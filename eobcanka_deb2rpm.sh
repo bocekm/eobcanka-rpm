@@ -31,6 +31,13 @@ pushd "$SPEC_DIR" > /dev/null
 
 SPEC=$(ls ./*.spec)
 
+# Replace upstream libcrypto library with a symlink to system one to avoid error:
+#     symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
+# See: https://forum.mojefedora.cz/t/eobcanka/7941/8 or https://bugzilla.redhat.com/show_bug.cgi?id=1829790#c9
+rm "opt/eObcanka/lib/openssl1.1/libcrypto.so.1.1"
+sed -i '/^%postun/ i ln -fs /usr/lib64/libcrypto.so.1.1 /opt/eObcanka/lib/openssl1.1/libcrypto.so.1.1' "$SPEC"
+sed -i 's/^\(".*\/libcrypto.so.1.1"\)$/%ghost \1/' "$SPEC"
+
 rpm -ql filesystem | sed 's/^/%dir "/; s/$/\/"/; s,//,/,;' >"$FS_DIRS"
 
 # remove standard dirs from package

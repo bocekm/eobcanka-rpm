@@ -23,7 +23,6 @@ $ wget https://info.identitaobcana.cz/Download/eObcanka.deb
 $ sudo dnf install alien rpm-build
 $ sudo ./eobcanka_deb2rpm.sh eObcanka.deb
 $ sudo dnf install eObcanka-*.rpm
-$ sudo ln -fs /usr/lib64/libcrypto.so.1.1 /opt/eObcanka/lib/openssl1.1/libcrypto.so.1.1
 ```
 
 ## Autoři / Authors
