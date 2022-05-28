@@ -35,6 +35,8 @@ sed '/^Group:/ a \
 %global __provides_exclude ^(libQt5|libicu|libcmprovp11|libcryptoui|libcrypto|libssl|libeop2v1czep11|libeopczep11|libeopproxyp11|libsa2v1czep11).*$' \
         "$SPEC.nodirs" >"$SPEC"
 
+rm "$SPEC.nodirs"
+
 rpmbuild -bb --define "buildroot $PWD" "$SPEC"
 
 _cleanup
