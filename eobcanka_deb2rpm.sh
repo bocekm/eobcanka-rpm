@@ -6,6 +6,15 @@ set -o pipefail
 DEB=$1
 
 ALIEN_OUT=$(mktemp)
+FS_DIRS=$(mktemp)
+
+_cleanup() {
+    cd /
+    rm -f "$FS_DIRS" "$ALIEN_OUT"
+}
+
+trap _cleanup INT TERM EXIT
+
 alien --to-rpm --scripts --generate "$DEB" >"$ALIEN_OUT"
 
 SPEC_DIR=$(awk '/Directory/ {print $2}' "$ALIEN_OUT")
@@ -13,7 +22,6 @@ SPEC_DIR=$(awk '/Directory/ {print $2}' "$ALIEN_OUT")
 
 pushd "$SPEC_DIR" > /dev/null
 
-FS_DIRS=$(mktemp)
 SPEC=$(ls ./*.spec)
 
 rpm -ql filesystem | sed 's/^/%dir "/; s/$/\/"/; s,//,/,;' >"$FS_DIRS"
@@ -29,4 +37,4 @@ sed '/^Group:/ a \
 
 rpmbuild -bb --define "buildroot $PWD" "$SPEC"
 
-rm -f "$FS_DIRS" "$ALIEN_OUT"
+_cleanup
