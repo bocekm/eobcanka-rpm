@@ -3,6 +3,13 @@
 set -eu
 set -o pipefail
 
+if [ "$#" -ne 1 ]
+then
+    echo "Usage: sudo $0 <deb file>" >&2
+    echo >&2
+    exit 1
+fi
+
 DEB=$1
 
 ALIEN_OUT=$(mktemp)
