@@ -2,7 +2,7 @@
 
 CZ: Neoficiální návod pro použití eObčanky na Fedoře pomocí RPM balíčku vygenerovaného z oficiálního DEB balíčku od české vlády (https://info.eidentita.cz/Download/).
 
-EN: Unofficial guide on how to use eObcanka on Fedora by converting the official Czech government eObcanka DEB package into an RPM package (https://info.eidentita.cz/Download/).
+EN: An unofficial guide on how to use eObcanka on Fedora by converting the official Czech government eObcanka DEB package into an RPM package (https://info.eidentita.cz/Download/).
 
 # Jak na to / How to
 
@@ -51,7 +51,7 @@ EN:<br>
 Error message: _“Chyba serveru při zpracování dat!”_<br>
 Solution: Try again. Second or third time's a charm.
 
-Error message: _“Chyba serveru při zpracování dat!”_<br>
+Error message: _“Chyba při komunikaci s čipem!”_<br>
 Solution: There's a problem with the card reader. Try a different one.
 
 Error message: _"Časový interval vypršel!"_<br>
