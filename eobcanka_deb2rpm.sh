@@ -43,10 +43,10 @@ rpm -ql filesystem | sed 's/^/%dir "/; s/$/\/"/; s,//,/,;' >"$FS_DIRS"
 # remove standard dirs from package
 grep -vxf "$FS_DIRS" "$SPEC" >"$SPEC.nodirs"
 
-sed '/^Group:/ a \
+sed '1i \
 # remove requires/provides from bundled libs \
 %global __requires_exclude ^(libQt5|libicu|libcmprovp11|libcryptoui|libcrypto|libssl|libeop2v1czep11|libeopczep11|libeopproxyp11|libsa2v1czep11).*$ \
-%global __provides_exclude ^(libQt5|libicu|libcmprovp11|libcryptoui|libcrypto|libssl|libeop2v1czep11|libeopczep11|libeopproxyp11|libsa2v1czep11).*$' \
+%global __provides_exclude ^(libQt5|libicu|libcmprovp11|libcryptoui|libcrypto|libssl|libeop2v1czep11|libeopczep11|libeopproxyp11|libsa2v1czep11).*$\n' \
         "$SPEC.nodirs" >"$SPEC"
 
 rm "$SPEC.nodirs"
