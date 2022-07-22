@@ -1,8 +1,8 @@
 # eObčanka RPM
 
-CZ: Neoficiální návod pro použití eObčanky na Fedoře pomocí RPM balíčku vygenerovaného z oficiálního DEB balíčku od české vlády (https://info.eidentita.cz/Download/).
+CZ: Neoficiální návod pro použití eObčanky na Fedoře pomocí RPM balíčku vygenerovaného z oficiálního DEB balíčku od české vlády (https://info.identitaobcana.cz/Download/).
 
-EN: An unofficial guide on how to use eObcanka on Fedora by converting the official Czech government eObcanka DEB package into an RPM package (https://info.eidentita.cz/Download/).
+EN: An unofficial guide on how to use eObcanka on Fedora by converting the official Czech government eObcanka DEB package into an RPM package (https://info.identitaobcana.cz/Download/).
 
 # Jak na to / How to
 
