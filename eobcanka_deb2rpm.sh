@@ -39,7 +39,9 @@ sed -i '/^%postun/ i ln -fs /usr/lib64/libcrypto.so.1.1 /opt/eObcanka/lib/openss
 sed -i 's/^\(".*\/libcrypto.so.1.1"\)$/%ghost \1/' "$SPEC"
 
 # Require Czech locale package and remove Debian-specific local-gen
-sed -i '/^Group:/ a Requires: glibc-langpack-cs' "$SPEC"
+sed -i '/^Group:/ a\
+Requires: glibc-langpack-cs\
+Requires: openssl1.1' "$SPEC"
 sed -i '/##CZ/{:a;N;/utf8\nfi/!ba};//d' "$SPEC"
 
 rpm -ql filesystem | sed 's/^/%dir "/; s/$/\/"/; s,//,/,;' >"$FS_DIRS"
