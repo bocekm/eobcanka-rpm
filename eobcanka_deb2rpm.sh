@@ -31,7 +31,7 @@ pushd "$SPEC_DIR" > /dev/null
 
 SPEC=$(ls ./*.spec)
 
-# Require Czech locale package and remove Debian-specific local-gen.
+# Require a Czech locale package and remove the use of a Debian-specific locale-gen utility.
 # The piece of code we want to remove from the spec file is:
 # ```
 # ##CZ language support
