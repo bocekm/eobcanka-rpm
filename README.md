@@ -6,9 +6,9 @@ EN: An unofficial guide on how to use eObcanka on Fedora by converting the offic
 
 # Jak na to / How to
 
-CZ: Postup je otestovaný s Fedorou 39 a s verzí DEB balíčku 3.4.0.
+CZ: Postup je otestovaný s Fedorou 40 a s verzí DEB balíčku 3.4.2.
 
-EN: Tested on Fedora 39 with the version of the DEB package 3.4.0.  The app itself is not translated, so a quick translation:
+EN: Tested on Fedora 40 with the version of the DEB package 3.4.2.  The app itself is not translated, so a quick translation:
 1. First it's going to tell you _"Vložte občanský průkaz!"_ meaning that you should insert the eObcanka to your card reader.
 2. Tick the checkbox _"Automaticky pokračovat po vložení občanského průkazu"_ meaning that the authentication process will continue automatically upon detecting an inserted eObcanka card.
 3. You should then see _"Zadejte identifikační osobní kód"_ meaning that you should enter your IOK - a number you set up when picking up your card.
