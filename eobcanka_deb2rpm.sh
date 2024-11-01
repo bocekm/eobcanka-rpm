@@ -16,16 +16,15 @@ ALIEN_OUT=$(mktemp)
 FS_DIRS=$(mktemp)
 
 _cleanup() {
-    cd /
     rm -f "$FS_DIRS" "$ALIEN_OUT"
+    rm -rf "$SPEC_DIR"  # Remove a folder with unpacked source files for the rpm
 }
 
 trap _cleanup INT TERM EXIT
 
 alien --to-rpm --scripts --generate "$DEB" >"$ALIEN_OUT"
 
-SPEC_DIR=$(awk '/Directory/ {print $2}' "$ALIEN_OUT")
-
+SPEC_DIR="$PWD/$(awk '/Directory/ {print $2}' "$ALIEN_OUT")"
 
 pushd "$SPEC_DIR" > /dev/null
 
@@ -57,5 +56,3 @@ sed '1i \
 rm "$SPEC.nodirs"
 
 rpmbuild -bb --buildroot "$PWD" "$SPEC"
-
-_cleanup
