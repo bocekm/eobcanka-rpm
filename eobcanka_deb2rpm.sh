@@ -56,6 +56,6 @@ sed '1i \
 
 rm "$SPEC.nodirs"
 
-rpmbuild -bb --define "buildroot $PWD" "$SPEC"
+rpmbuild -bb --buildroot "$PWD" "$SPEC"
 
 _cleanup
