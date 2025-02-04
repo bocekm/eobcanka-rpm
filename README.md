@@ -1,14 +1,14 @@
 # eObčanka RPM
 
-CZ: Neoficiální návod pro použití eObčanky na Fedoře pomocí RPM balíčku vygenerovaného z oficiálního DEB balíčku od české vlády (https://info.identitaobcana.cz/Download/).
+CZ: Neoficiální návod pro použití eObčanky na Fedoře pomocí RPM balíčku vygenerovaného z oficiálního DEB balíčku od české vlády (https://info.identita.gov.cz/Download/).
 
-EN: An unofficial guide on how to use eObcanka on Fedora by converting the official Czech government eObcanka DEB package into an RPM package (https://info.identitaobcana.cz/Download/).
+EN: An unofficial guide on how to use eObcanka on Fedora by converting the official Czech government eObcanka DEB package into an RPM package (https://info.identita.gov.cz/Download/).
 
 # Jak na to / How to
 
-CZ: Postup je otestovaný s Fedorou 40 a s verzí DEB balíčku 3.4.2.
+CZ: Postup je otestovaný s Fedorou 41 a s verzí DEB balíčku 3.4.3.
 
-EN: Tested on Fedora 40 with the version of the DEB package 3.4.2.  The app itself is not translated, so a quick translation:
+EN: Tested on Fedora 41 with the version of the DEB package 3.4.3.  The app itself is not translated, so a quick translation:
 1. First it's going to tell you _"Vložte občanský průkaz!"_ meaning that you should insert the eObcanka to your card reader.
 2. Tick the checkbox _"Automaticky pokračovat po vložení občanského průkazu"_ meaning that the authentication process will continue automatically upon detecting an inserted eObcanka card.
 3. You should then see _"Zadejte identifikační osobní kód"_ meaning that you should enter your IOK - a number you set up when picking up your card.
@@ -19,7 +19,7 @@ EN: Tested on Fedora 40 with the version of the DEB package 3.4.2.  The app itse
 $ git clone git@github.com:bocekm/eobcanka-rpm.git
 $ cd eobcanka-rpm
 $ chmod u+x eobcanka_deb2rpm.sh
-$ wget https://info.identitaobcana.cz/Download/eObcanka.deb
+$ wget https://info.identita.gov.cz/Download/eObcanka.deb
 $ sudo dnf install alien rpm-build
 $ sudo ./eobcanka_deb2rpm.sh eObcanka.deb
 $ sudo dnf install eObcanka-*.rpm
