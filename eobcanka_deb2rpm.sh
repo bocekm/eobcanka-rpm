@@ -50,7 +50,7 @@ grep -vxf "$FS_DIRS" "$SPEC" >"$SPEC.nodirs"
 
 sed '1i \
 # remove requires/provides from bundled libs \
-%global __requires_exclude ^(libQt6|libeop2v1czep11|libeopczep11|libeopproxyp11|libsa2v1czep11).*$\n' \
+%global __requires_exclude ^(libQt6|libeop2v1czep11|libeopczep11|libeopproxyp11|libsa2v1czep11|libmimerapi).*$\n' \
         "$SPEC.nodirs" >"$SPEC"
 
 rm "$SPEC.nodirs"
